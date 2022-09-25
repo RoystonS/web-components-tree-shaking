@@ -67,3 +67,9 @@ export class ComponentOne extends LitElement {
     this.input.value = "";
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "component-one": ComponentOne;
+  }
+}

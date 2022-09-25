@@ -5,15 +5,21 @@ export class ComponentTwo extends LitElement {
   constructor() {
     super();
 
-    this.name = "Name";
+    this.greetName = "Name";
   }
 
   @property()
-  declare name: string;
+  declare greetName: string;
 
   render() {
-    return html` <p>Component two. Hello ${this.name}.</p> `;
+    return html` <p>Component two. Hello ${this.greetName}.</p> `;
   }
 }
 
 customElements.define("component-two", ComponentTwo);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "component-two": ComponentTwo;
+  }
+}
